@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="School Hub — AI-powered school management portal for attendance, fees, exams and more.">
+    <title>School Hub | Management Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <!-- ── Login ───────────────────────────────────────── -->
+    <section id="loginScreen" class="login-screen">
+      <aside class="login-feature">
+        <div class="login-feature-bg" aria-hidden="true">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+        </div>
+        <div class="brand login-brand">
+          <span class="logo" aria-hidden="true">
+            <svg class="logo-mark" viewBox="0 0 48 48">
+              <path class="logo-roof" d="M7 19.5 24 9l17 10.5-17 10.6L7 19.5Z"/>
+              <path class="logo-book" d="M13 24.3v11.2c3.6-1.5 7.1-.9 11 2.5 3.9-3.4 7.4-4 11-2.5V24.3l-11 6.8-11-6.8Z"/>
+              <path class="logo-line" d="M24 31.1V38"/>
+            </svg>
+          </span>
+          <div>
+            <strong>School Hub</strong>
+            <small>Management Portal</small>
+          </div>
+        </div>
+        <div class="login-message">
+          <span class="eyebrow">Bright Future Academy</span>
+          <h1>Manage your school<br>in one place.</h1>
+          <p>Attendance, student records, fees, exams, announcements, and reports — all in a secure workspace.</p>
+          <div class="feature-badges">
+            <span>🎯 Smart attendance</span>
+            <span>💰 Fee tracking</span>
+            <span>📝 Exam planning</span>
+            <span>📢 Announcements</span>
+            <span>📊 Reports</span>
+          </div>
+        </div>
+      </aside>
+      <main class="login-area">
+        <button class="theme-toggle login-theme-toggle" type="button" id="loginThemeToggle" aria-label="Switch to dark theme" title="Switch to dark theme">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+        <form id="loginForm" class="login-card">
+          <div class="brand login-card-brand">
+            <span class="logo" aria-hidden="true">
+              <svg class="logo-mark" viewBox="0 0 48 48">
+                <path class="logo-roof" d="M7 19.5 24 9l17 10.5-17 10.6L7 19.5Z"/>
+                <path class="logo-book" d="M13 24.3v11.2c3.6-1.5 7.1-.9 11 2.5 3.9-3.4 7.4-4 11-2.5V24.3l-11 6.8-11-6.8Z"/>
+                <path class="logo-line" d="M24 31.1V38"/>
+              </svg>
+            </span>
+            <div>
+              <strong>School Hub</strong>
+              <small>Management Portal</small>
+            </div>
+          </div>
+          <span class="eyebrow">Welcome back</span>
+          <h2>Sign in to School Hub</h2>
+          <p class="login-copy">Enter your administrator credentials to continue.</p>
+          <label class="login-field" for="loginEmail">
+            <span>Email address</span>
+            <input id="loginEmail" name="email" type="email" autocomplete="username" placeholder="admin@brightfuture.edu" required>
+          </label>
+          <label class="login-field" for="loginPassword">
+            <span>Password</span>
+            <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter password" required>
+          </label>
+          <p id="loginError" class="login-error" role="alert"></p>
+          <button class="button primary login-submit" type="submit" id="loginBtn">
+            <span class="btn-text">Sign in</span>
+            <span class="btn-loader" hidden>●●●</span>
+          </button>
+          <section class="demo-login" aria-label="Demo administrator account">
+            <strong>Demo administrator</strong>
+            <span>admin@brightfuture.edu</span>
+            <span>Password: Admin@123</span>
+          </section>
+        </form>
+      </main>
+    </section>
+
+    <!-- ── App Shell ───────────────────────────────────── -->
+    <div id="appShell" class="app-shell authenticated-view" hidden>
+      <aside class="sidebar">
+        <div class="sidebar-bg" aria-hidden="true">
+          <div class="orb orb-s1"></div>
+          <div class="orb orb-s2"></div>
+        </div>
+        <div class="brand">
+          <span class="logo" aria-hidden="true">
+            <svg class="logo-mark" viewBox="0 0 48 48">
+              <path class="logo-roof" d="M7 19.5 24 9l17 10.5-17 10.6L7 19.5Z"/>
+              <path class="logo-book" d="M13 24.3v11.2c3.6-1.5 7.1-.9 11 2.5 3.9-3.4 7.4-4 11-2.5V24.3l-11 6.8-11-6.8Z"/>
+              <path class="logo-line" d="M24 31.1V38"/>
+            </svg>
+          </span>
+          <div>
+            <strong>School Hub</strong>
+            <small>Management Portal</small>
+          </div>
+        </div>
+        <section class="school-switcher" aria-label="Current school">
+          <span class="eyebrow">Workspace</span>
+          <strong>Bright Future Academy</strong>
+          <small>Single campus</small>
+        </section>
+        <nav id="navigation" aria-label="Main navigation"></nav>
+        <section class="school-card">
+          <span class="eyebrow">Academic year</span>
+          <strong id="academicYear">2026-2027</strong>
+          <span id="term">Term 1</span>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div class="context-title">
+            <span class="eyebrow" id="contextLabel">Operations / Overview</span>
+            <h1 id="contextTitle">Command Center</h1>
+          </div>
+          <div class="topbar-right">
+            <label class="search">
+              <span>Search</span>
+              <input id="search" type="search" placeholder="Search current module…">
+            </label>
+            <button class="command-button" type="button" id="quickActions" aria-label="Create a new record">
+              <span>Quick actions</span><kbd>+</kbd>
+            </button>
+            <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch to dark theme" title="Switch to dark theme">
+              <span class="theme-icon" aria-hidden="true">🌙</span>
+            </button>
+            <div class="user">
+              <span class="avatar">AD</span>
+              <div><strong>Administrator</strong><small>School Admin</small></div>
+            </div>
+            <button class="button ghost signout" type="button" id="signOut">Sign out</button>
+          </div>
+        </header>
+        <section id="page" class="page" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <!-- ── Record Dialog ───────────────────────────────── -->
+    <dialog id="recordDialog">
+      <form id="recordForm" method="dialog">
+        <header class="dialog-header">
+          <div>
+            <span class="eyebrow" id="dialogMode">New record</span>
+            <h2 id="dialogTitle">Add record</h2>
+          </div>
+          <button class="icon-button" type="button" id="closeDialog" aria-label="Close">&times;</button>
+        </header>
+        <div id="formFields" class="form-fields"></div>
+        <p id="formError" class="form-error" role="alert"></p>
+        <footer class="dialog-footer">
+          <button class="button ghost" type="button" id="cancelDialog">Cancel</button>
+          <button class="button primary" type="submit">Save record</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
