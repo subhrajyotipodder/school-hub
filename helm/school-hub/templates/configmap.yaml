@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: school-config
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "school-hub.labels" . | nindent 4 }}
+data:
+  NODE_ENV: {{ .Values.backend.env.nodeEnv | quote }}
+  AUTH_MODE: {{ .Values.backend.env.authMode | quote }}
+  DATA_BACKEND: {{ .Values.backend.env.dataBackend | quote }}
+  ADMIN_EMAIL: {{ .Values.backend.env.adminEmail | quote }}
+  SESSION_TTL_MINUTES: {{ .Values.backend.env.sessionTtlMinutes | quote }}
+  HOST: {{ .Values.backend.env.host | quote }}
+  PORT: {{ .Values.backend.port | toString | quote }}
+  DB_HOST: "postgres"
+  DB_PORT: "5432"
+  DB_USER: {{ .Values.postgres.user | quote }}
+  DB_NAME: {{ .Values.postgres.dbName | quote }}

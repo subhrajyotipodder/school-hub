@@ -1,0 +1,12 @@
+apiVersion: v2
+name: school-hub
+description: School Hub Management System
+type: application
+version: 0.1.0
+appVersion: "latest"
+keywords:
+  - school
+  - management
+  - education
+maintainers:
+  - name: School Hub Team
