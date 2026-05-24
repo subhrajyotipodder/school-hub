@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git://172.18.0.1:9418/
+    repoURL: https://github.com/subhrajyotipodder/school-hub.git
     targetRevision: HEAD
     path: helm/school-hub
     helm:
